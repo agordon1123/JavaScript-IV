@@ -59,14 +59,12 @@ class Instructor extends Person {
     this.specialty = attributes.specialty;
     this.favLanguage = attributes.favLanguage;
     this.catchPhrase = attributes.catchPhrase;
-    this.demo = attributes.demo;
-    this.grade = attributes.grade;
     }
     demo(subject) {
-        return `Today we are learning about ${this.subject}`;
+        return `Today we are learning about ${subject}`;
     }
     grade(student, subject) {
-        return `${this.student.name} receives a perfect score on ${this.subject}`
+        return `${student} receives a perfect score on ${subject}`;
     }
 }
 
@@ -94,10 +92,10 @@ class Student extends Person {
         return `${this.favSubjects}`;
     }
     PRAssignment(subject) {
-        return `${student.name} has submitted a PR for ${this.subject}`;
+        return `${this.name} has submitted a PR for ${subject}`;
     }
-    sprintChallenge() {
-        return `${student.name} has begun sprint challenge on ${this.subject}`;
+    sprintChallenge(subject) {
+        return `${this.name} has begun sprint challenge on ${subject}`;
     }
 }
 
@@ -253,3 +251,25 @@ const dan = new Instructor({
     favLanguage: 'Java',
     catchPhrase: ":eggplant:",
 });
+
+console.log(dan);
+console.log(dan.name);
+console.log(dan.age);
+console.log(dan.location);
+console.log(dan.speak());
+console.log(dan.specialty);
+console.log(dan.favLanguage);
+console.log(dan.catchPhrase);
+console.log(dan.demo('JavaScript'));
+console.log(dan.grade('Alex', 'debugging'));
+console.log(isaiah.previousBackground);
+console.log(isaiah.className);
+console.log(isaiah.favSubjects);
+console.log(isaiah.listsSubjects());
+console.log(isaiah.PRAssignment('JS-IV'));
+console.log(isaiah.sprintChallenge('JavaScript Fundamentals'));
+console.log(dan);
+
+console.log(isaiah.name,`, from`, isaiah.location);
+console.log(dan.speak(), `I am a`, dan.specialty);
+console.log()
