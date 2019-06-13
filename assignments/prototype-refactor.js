@@ -7,16 +7,6 @@ Prototype Refactor
 2. Your goal is to refactor all of this code to use ES6 Classes. The console.log() statements should still return what is expected of them.
 
 */
-
-/*
-  Object oriented design is commonly used in video games.  For this part of the assignment you will be implementing several constructor functions with their correct inheritance hierarchy.
-
-  In this file you will be creating three constructor functions: GameObject, CharacterStats, Humanoid.  
-
-  At the bottom of this file are 3 objects that all end up inheriting from Humanoid.  Use the objects at the bottom of the page to test your constructor functions.
-  
-  Each constructor function has unique properties and methods that are defined in their block comments below:
-*/
   
 /*
   === GameObject ===
@@ -49,17 +39,6 @@ Prototype Refactor
   * Instances of CharacterStats should have all of the same properties as GameObject.
 */
 
-// Test you work by un-commenting these 3 objects and the list of console logs below:
-
-// function GameObject(attributes) {
-//     this.name = attributes.name;
-//     this.dimensions = attributes.dimensions;
-//   }
-
-//   GameObject.prototype.destroy = function() {
-//     return `${this.name} was removed from the game.`
-//   }
-
 class GameObject {
     constructor(attributes) {
         this.name = attributes.name;
@@ -69,17 +48,6 @@ class GameObject {
         return `${this.name} was removed from the game.`;      
     }
 }
-  
-//   function CharacterStats(attributes) {
-//     GameObject.call(this, attributes)
-//     this.healthPoints = attributes.healthPoints;
-//   }
-
-//   CharacterStats.prototype = Object.create(GameObject.prototype)
-
-//   CharacterStats.prototype.takeDamage = function() {
-//     return `${this.name} took damage!`;
-//   }
 
 class CharacterStats extends GameObject {
     constructor(attributes) {
@@ -106,23 +74,6 @@ class Humanoid extends CharacterStats {
         return `${this.name} took damage!`;
     }
 }
-  
-//   function Humanoid(attributes) {
-//     CharacterStats.call(this, attributes)
-//     this.team = attributes.team;
-//     this.weapons = attributes.weapons;
-//     this.language = attributes.language;
-//     this.createdAt = attributes.createdAt;
-//   }
-//   Humanoid.prototype = Object.create(GameObject.prototype)
-  
-//   Humanoid.prototype.greet = function() {
-//     return `${this.name} offers a greeting in ${this.language}`
-//   }
-  
-//   Humanoid.prototype.takeDamage = function() {
-//     return `${this.name} took damage!`;
-//   }
   
 const mage = new Humanoid({
     createdAt: new Date(),
